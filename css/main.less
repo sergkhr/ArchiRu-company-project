@@ -1,0 +1,39 @@
+:root{
+    --archiru-blue: #0080CC;
+    --white-color: #FFFFFF;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#content{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+#logo{
+    width: 100px;
+    background-color: red;
+}
+
+.menu_item_content{
+    background-color: yellow;
+    justify-self: center;
+    width: 1480px;
+
+    @media (max-width: 1920px) and (min-width: 1541px){
+        width: 1180px;
+    }
+    @media (max-width: 1540px) and (min-width: 1241px){
+        width: 900px;
+    }
+    //tablet
+    @media (max-width: 1240px) and (min-width: 961px){
+        width: 900px;
+    }
+}

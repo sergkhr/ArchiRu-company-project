@@ -1,0 +1,28 @@
+#menu{
+    background-color: rgb(61, 61, 61);
+    display: flex;
+    .menu_item{
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+        // text-orientation: upright;
+        color: var(--white-color);
+        font-size: 20px;
+        display: block;
+
+        height: 100%;
+        margin: 0;
+        padding-top: 100px;
+        width: fit-content;
+        border-left: 1px solid var(--white-color);
+        cursor: pointer;
+        transition: all 0.15s ease-in-out;
+        &:hover{
+            background-color: var(--archiru-blue);
+            padding-top: 80px;
+        }
+        p{
+            transform: rotate(180deg);
+            height: fit-content;
+        }
+    }
+}
