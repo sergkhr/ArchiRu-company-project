@@ -1,13 +1,15 @@
 #menu{
-    background-color: rgb(61, 61, 61);
+    // background-color: rgb(61, 61, 61);
     display: flex;
     .menu_item{
         writing-mode: vertical-lr;
         text-orientation: mixed;
         // text-orientation: upright;
         color: var(--white-color);
-        font-size: 20px;
-        display: block;
+        font-size: 16px;
+        min-width: 40px;
+        display: flex;
+        align-items: center;
 
         height: 100%;
         margin: 0;
@@ -15,14 +17,21 @@
         width: fit-content;
         border-left: 1px solid var(--white-color);
         cursor: pointer;
-        transition: all 0.15s ease-in-out;
+        transition: background-color 0.15s ease-in-out, padding-top 0.15s ease-in-out,
+                    color 0.3s ease-in-out, border-left 0.3s ease-in-out;
         &:hover{
             background-color: var(--archiru-blue);
             padding-top: 80px;
         }
-        p{
+        b{
             transform: rotate(180deg);
             height: fit-content;
+            margin: 0;
         }
+    }
+
+    &.on_white_background .menu_item{
+        color: var(--black-color);
+        border-left: 1px solid var(--black-color);
     }
 }

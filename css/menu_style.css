@@ -1,26 +1,32 @@
 #menu {
-  background-color: #3d3d3d;
   display: flex;
 }
 #menu .menu_item {
   writing-mode: vertical-lr;
   text-orientation: mixed;
   color: var(--white-color);
-  font-size: 20px;
-  display: block;
+  font-size: 16px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
   height: 100%;
   margin: 0;
   padding-top: 100px;
   width: fit-content;
   border-left: 1px solid var(--white-color);
   cursor: pointer;
-  transition: all 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, padding-top 0.15s ease-in-out, color 0.3s ease-in-out, border-left 0.3s ease-in-out;
 }
 #menu .menu_item:hover {
   background-color: var(--archiru-blue);
   padding-top: 80px;
 }
-#menu .menu_item p {
+#menu .menu_item b {
   transform: rotate(180deg);
   height: fit-content;
+  margin: 0;
+}
+#menu.on_white_background .menu_item {
+  color: var(--black-color);
+  border-left: 1px solid var(--black-color);
 }

@@ -1,6 +1,10 @@
 :root{
     --archiru-blue: #0080CC;
     --white-color: #FFFFFF;
+    --black-color: #000000;
+    --dark-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(123, 123, 123, 0.9) 100%);
+
+    --background-image-url: url("../src/skyscrapers_back_bad_quality.jpg");
 }
 
 html, body{
@@ -8,17 +12,19 @@ html, body{
     width: 100%;
     margin: 0;
     padding: 0;
-}
-
-#content{
-    display: flex;
-    flex-direction: row-reverse;
+    font-family: vida32_probold, Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    z-index: -100;
 }
 
 
 #logo{
     width: 100px;
-    background-color: red;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-color);
 }
 
 .menu_item_content{
