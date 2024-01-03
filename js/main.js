@@ -1,45 +1,58 @@
 let container = $("#content");
 let menu = $("#menu");
-let menu_items = {
-    activity: $("#activity_menu_item"),
-    projects: $("#projects_menu_item"),
-    texts: $("#texts_menu_item"),
-    events: $("#events_menu_item")
-}
+let all_menu_items = $("#menu .menu_item");
 let logo = $("#logo");
 let section_container = $(".menu_item_content");
+
 
 
 function cleanBackgroundStates(element){
     element.removeClass("white_background");
     element.removeClass("dark_background");
 }
+
 function cleanMenuStates(){
     menu.removeClass("on_white_background");
 }
 
-menu_items.activity.click(function(){
-    cleanBackgroundStates(container);
-    cleanMenuStates();
-    container.addClass("dark_background");
-});
-
-menu_items.projects.click(function(){
+function turnContainerBackgroundToWhite(){
     cleanBackgroundStates(container);
     cleanMenuStates();
     container.addClass("white_background");
     menu.addClass("on_white_background");
-});
+}
 
-
-
-// in progress
-menu_items.texts.click(function(){
+function turnContainerBackgroundToDark(){
     cleanBackgroundStates(container);
     cleanMenuStates();
+    container.addClass("dark_background");
+}
+
+function hideMunuItem(item){
+    all_menu_items.removeClass("hidden"); //show all menu items before hiding one
+    $("#menu .menu_item_border").removeClass("hidden");
+
+    item.addClass("hidden");
+    if(item.is(":last-child")){
+        item.prev().addClass("hidden");
+    }
+    else{
+        item.next().addClass("hidden");
+    }
+}
+
+
+
+let background_type_functions = {
+    "white": turnContainerBackgroundToWhite,
+    "dark": turnContainerBackgroundToDark
+}
+all_menu_items.click(function(){
+    const index = $(this).data("index");
+    const background_type = $(this).data("background-type");
+    const section = section_container.eq(index);
+
+    background_type_functions[background_type]();
+    hideMunuItem($(this));
 });
 
-menu_items.events.click(function(){
-    cleanBackgroundStates(container);
-    cleanMenuStates();
-});

@@ -1,6 +1,29 @@
+.menu_item_content {
+  background-color: yellow;
+  justify-self: center;
+  box-sizing: border-box;
+  width: 1480px;
+  margin: 100px auto 110px auto;
+}
+@media (max-width: 1920px) and (min-width: 1541px) {
+  .menu_item_content {
+    width: 1180px;
+  }
+}
+@media (max-width: 1540px) and (min-width: 1241px) {
+  .menu_item_content {
+    width: 900px;
+  }
+}
+@media (max-width: 1240px) and (min-width: 961px) {
+  .menu_item_content {
+    width: 900px;
+  }
+}
 #content {
   display: flex;
   flex-direction: row-reverse;
+  height: 100vh;
   background-image: var(--background-image-url);
   background-size: cover;
   /* Enlarge the image horizontally */
@@ -26,7 +49,7 @@
 }
 #content::after {
   content: "";
-  background-color: var(--white-color);
+  background-color: rgb(var(--white-color));
   width: 100%;
   height: 100%;
   opacity: 0;

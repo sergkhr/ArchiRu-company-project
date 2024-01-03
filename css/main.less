@@ -1,8 +1,15 @@
 :root{
-    --archiru-blue: #0080CC;
-    --white-color: #FFFFFF;
-    --black-color: #000000;
+    // colors have to be in rgb format for rgba() function to work
+    // variables should be used with rgb() or other function
+    --archiru-blue: 0, 128, 204; // #0080CC
+    --white-color: 255, 255, 255; // #FFFFFF
+    --gray-color: 183, 183, 183; // #B7B7B7
+    --gray-medium-color: 130, 130, 130; // #828282
+    --black-color: 0, 0 ,0; // #000000
     --dark-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(123, 123, 123, 0.9) 100%);
+
+    --normal-animation-time: 0.3s;
+    --fast-animation-time: 0.15s;
 
     --background-image-url: url("../src/skyscrapers_back_bad_quality.jpg");
 }
@@ -12,7 +19,8 @@ html, body{
     width: 100%;
     margin: 0;
     padding: 0;
-    font-family: vida32_probold, Georgia, 'Times New Roman', Times, serif;
+    font-family: vida32_probold, Arial, Helvetica, sans-serif;
+    letter-spacing: normal;
     position: relative;
     z-index: -100;
 }
@@ -24,22 +32,10 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--white-color);
-}
+    background-color: rgb(var(--white-color));
+    margin: 0;
 
-.menu_item_content{
-    background-color: yellow;
-    justify-self: center;
-    width: 1480px;
-
-    @media (max-width: 1920px) and (min-width: 1541px){
-        width: 1180px;
-    }
-    @media (max-width: 1540px) and (min-width: 1241px){
-        width: 900px;
-    }
-    //tablet
-    @media (max-width: 1240px) and (min-width: 961px){
-        width: 900px;
-    }
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }

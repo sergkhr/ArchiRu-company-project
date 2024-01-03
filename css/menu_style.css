@@ -1,24 +1,49 @@
 #menu {
   display: flex;
 }
+#menu .menu_item[data-index="1"] {
+  color: rgb(var(--white-color));
+}
+#menu .menu_item[data-index="1"] + .menu_item_border {
+  background-color: rgb(var(--white-color));
+}
+#menu .menu_item[data-index="2"] {
+  color: rgb(var(--white-color));
+}
+#menu .menu_item[data-index="2"] + .menu_item_border {
+  background-color: rgb(var(--white-color));
+}
+#menu .menu_item[data-index="3"] {
+  color: rgb(var(--white-color));
+}
+#menu .menu_item[data-index="3"] + .menu_item_border {
+  background-color: rgb(var(--white-color));
+}
+#menu .menu_item[data-index="4"] {
+  color: rgb(var(--white-color));
+}
+#menu .menu_item[data-index="4"] + .menu_item_border {
+  background-color: rgb(var(--white-color));
+}
 #menu .menu_item {
+  color: rgba(var(--white-color), 40%);
+  box-sizing: border-box;
   writing-mode: vertical-lr;
   text-orientation: mixed;
-  color: var(--white-color);
   font-size: 16px;
-  min-width: 40px;
+  min-width: 39px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   height: 100%;
   margin: 0;
   padding-top: 100px;
   width: fit-content;
-  border-left: 1px solid var(--white-color);
   cursor: pointer;
-  transition: background-color 0.15s ease-in-out, padding-top 0.15s ease-in-out, color 0.3s ease-in-out, border-left 0.3s ease-in-out;
+  transition: background-color var(--fast-animation-time) ease-in-out, padding-top var(--fast-animation-time) ease-in-out, color var(--normal-animation-time) ease-in-out, border-left var(--normal-animation-time) ease-in-out, margin var(--normal-animation-time) ease-in-out, padding var(--normal-animation-time) ease-in-out, min-width var(--normal-animation-time) ease-in-out, width var(--normal-animation-time) ease-in-out, opacity var(--fast-animation-time) ease-in-out;
 }
 #menu .menu_item:hover {
-  background-color: var(--archiru-blue);
+  background-color: rgb(var(--archiru-blue));
   padding-top: 80px;
 }
 #menu .menu_item b {
@@ -26,7 +51,50 @@
   height: fit-content;
   margin: 0;
 }
+#menu .menu_item.hidden {
+  opacity: 0;
+  min-width: 0;
+  width: 0;
+  margin: 0;
+}
+#menu .menu_item_border {
+  background-color: rgba(var(--white-color), 20%);
+  content: "";
+  width: 1px;
+  height: 100%;
+  transition: opacity var(--fast-animation-time) ease-in-out, width var(--fast-animation-time) ease-in-out, background-color var(--fast-animation-time) ease-in-out;
+}
+#menu .menu_item_border.hidden {
+  opacity: 0;
+  width: 0;
+}
+#menu.on_white_background .menu_item[data-index="1"] {
+  color: rgb(var(--black-color));
+}
+#menu.on_white_background .menu_item[data-index="1"] + .menu_item_border {
+  background-color: rgb(var(--gray-color));
+}
+#menu.on_white_background .menu_item[data-index="2"] {
+  color: rgb(var(--black-color));
+}
+#menu.on_white_background .menu_item[data-index="2"] + .menu_item_border {
+  background-color: rgb(var(--gray-color));
+}
+#menu.on_white_background .menu_item[data-index="3"] {
+  color: rgb(var(--black-color));
+}
+#menu.on_white_background .menu_item[data-index="3"] + .menu_item_border {
+  background-color: rgb(var(--gray-color));
+}
+#menu.on_white_background .menu_item[data-index="4"] {
+  color: rgb(var(--black-color));
+}
+#menu.on_white_background .menu_item[data-index="4"] + .menu_item_border {
+  background-color: rgb(var(--gray-color));
+}
 #menu.on_white_background .menu_item {
-  color: var(--black-color);
-  border-left: 1px solid var(--black-color);
+  color: rgb(var(--gray-medium-color));
+}
+#menu.on_white_background .menu_item_border {
+  background-color: rgb(var(--gray-color));
 }

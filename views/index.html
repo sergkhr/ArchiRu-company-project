@@ -11,17 +11,47 @@
 <body>
     <div id="content">
         <header id="menu">
-            <li id="activity_menu_item" class="menu_item">
+
+            <!--Structure is: <li> <span> <li> <span> <li>-->
+            <!--Last item does not have border-->
+            <!--JS requires that exact order of elements-->
+
+            <!-- data-index should be ordered-->
+            <!-- data-index should be equal to the respective content block data-index-->
+
+            <!-- data-background-type отвечает за то какой будет задний фон-->
+            <!-- Варианты на момент написания (03.01.24) "dark", "white"-->
+
+            <li id="activity_menu_item" data-index="1" data-background-type="dark" class="menu_item">
                 <b>НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ</b>
             </li>
-            <li id="projects_menu_item" class="menu_item">
+            <span class="menu_item_border"></span>
+            <li id="projects_menu_item" data-index="2" data-background-type="white" class="menu_item">
                 <b>АРХИТЕКТУРНЫЕ ПРОЕКТЫ</b>
             </li>
-            <li id="texts_menu_item" class="menu_item">
+            <span class="menu_item_border"></span>
+            <li id="texts_menu_item" data-index="3" data-background-type="white" class="menu_item">
                 <b>ТЕКСТЫ</b>
             </li>
-            <li id="events_menu_item" class="menu_item">
+            <span class="menu_item_border"></span>
+            <li id="events_menu_item" data-index="4" data-background-type="white" class="menu_item">
                 <b>СОБЫТИЯ</b>
+            </li>
+            <span class="menu_item_border"></span>
+            <li id="videos_menu_item" data-index="5" data-background-type="white" class="menu_item">
+                <b>ВИДЕО</b>
+            </li>
+            <span class="menu_item_border"></span>
+            <li id="about_menu_item" data-index="6" data-background-type="dark" class="menu_item">
+                <b>О КОМПАНИИ. ПОДРОБНЕЕ</b>
+            </li>
+            <span class="menu_item_border"></span>
+            <li id="contacts_menu_item" data-index="7" data-background-type="white" class="menu_item">
+                <b>КОНТАКТЫ. ПОДРОБНЕЕ</b>
+            </li>
+            <span class="menu_item_border"></span>
+            <li id="special_projects_menu_item" data-index="8" data-background-type="white" class="menu_item">
+                <b>СПЕЦПРОЕКТЫ</b>
             </li>
         </header>
 
@@ -29,25 +59,44 @@
             <img src="../src/logo.png" alt="logo">
         </div>
 
+
+        <!-- data-index has to be equal to the respective menu index-->
+
         <div class="menu_item_content">
             <section class="hero">
 
             </section>
     
-            <section class="activity_info">
+            <section class="activity_info" data-index="1">
     
             </section>
     
-            <section class="projects">
+            <section class="projects" data-index="2">
     
             </section>
     
-            <section class="texts">
+            <section class="texts" data-index="3">
     
             </section>
     
-            <section class="events">
+            <section class="events" data-index="4">
     
+            </section>
+
+            <section class="videos" data-index="5">
+
+            </section>
+
+            <section class="about" data-index="6">
+
+            </section>
+
+            <section class="contacts" data-index="7">
+
+            </section>
+
+            <section class="special_projects" data-index="8">
+
             </section>
         </div>
     </div>
