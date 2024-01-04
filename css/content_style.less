@@ -1,20 +1,25 @@
 .menu_item_content{
     background-color: yellow;
-    justify-self: center;
     box-sizing: border-box;
     width: 1480px;
-    margin: 100px auto 110px auto;
 
-    @media (max-width: 1920px) and (min-width: 1541px){
+    @media (max-width: 1919px) and (min-width: 1540px){
         width: 1180px;
     }
-    @media (max-width: 1540px) and (min-width: 1241px){
+    @media (max-width: 1539px) and (min-width: 1240px){
         width: 900px;
     }
     //tablet
-    @media (max-width: 1240px) and (min-width: 961px){
+    @media (max-width: 1239px) and (min-width: 960px){
         width: 900px;
     }
+    //mobile
+    @media (max-width: 959px){
+        width: 100%;
+    }
+
+    display: flex;
+    margin: 100px auto 110px auto;
 }
 
 #content{

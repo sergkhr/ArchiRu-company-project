@@ -9,13 +9,21 @@
   --fast-animation-time: 0.15s;
   --background-image-url: url("../src/skyscrapers_back_bad_quality.jpg");
 }
+@font-face {
+  font-family: 'Vida32_probold';
+  src: url('../src/Vida/Vida32_probold/Vida32Pro-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Vida32_pro';
+  src: url('../src/Vida/Vida32_pro/Vida32Pro.woff') format('woff');
+}
 html,
 body {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: vida32_probold, Arial, Helvetica, sans-serif;
+  font-family: Vida32_probold, Arial, Helvetica, sans-serif;
   letter-spacing: normal;
   position: relative;
   z-index: -100;
@@ -23,6 +31,7 @@ body {
 #logo {
   width: 100px;
   height: 100px;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,4 +40,13 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+@media (max-width: 1239px) {
+  #logo {
+    width: 120px;
+    padding-left: 20px;
+    height: 80px;
+    top: 0;
+    left: 0;
+  }
 }
