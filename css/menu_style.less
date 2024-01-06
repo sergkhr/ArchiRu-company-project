@@ -1,24 +1,42 @@
+
+#archi_menu_container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--archi-menu-size);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#archi_menu{
+    background-color: gray;
+    width: 100%;
+    max-width: 1242px;
+    height: var(--archi-menu-size);
+}
+
+
+
 #menu{
     // sizes of menu items
-    --item-important-size: 40px;
-    --item-size: 30px;
+    --menu-for-eight-size: 280px;
+    --item-important-size: calc(var(--menu-for-eight-size) / 7);
+    --item-size: calc(var(--item-important-size) * 0.75);
     @media (max-width: 1919px) and (min-width: 1540px){
-        --item-important-size: 30px;
-        --item-size: 25px;
+        --menu-for-eight-size: 210px;
     }
     @media (max-width: 1539px) and (min-width: 1240px){
-        --item-important-size: 30px;
-        --item-size: 25px;
+        --menu-for-eight-size: 210px;
     }
     //tablet
     @media (max-width: 1239px) and (min-width: 960px){
-        --item-important-size: 30px;
-        --item-size: 25px;
+        --menu-for-eight-size: 210px;
     }
     //mobile
     @media (max-width: 959px){
-        --item-important-size: 30px;
-        --item-size: 25px;
+        --menu-for-eight-size: 210px;
     }
     // sizes of menu items end
 
@@ -144,7 +162,9 @@
 
         content: "";
         width: 1px;
-        height: 100%;
+        height: calc(100% + var(--archi-menu-size));
+        position: relative;
+        top: calc(-1 * var(--archi-menu-size));
         transition: opacity var(--fast-animation-time) ease-in-out, 
                     width var(--fast-animation-time) ease-in-out, 
                     height var(--fast-animation-time) ease-in-out,

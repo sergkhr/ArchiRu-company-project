@@ -3,6 +3,7 @@ let menu = $("#menu");
 let all_menu_items = $("#menu .menu_item");
 let logo = $("#logo");
 let section_container = $(".menu_item_content");
+let content_items = $(".content_item");
 
 
 
@@ -41,6 +42,11 @@ function hideMunuItem(item){
     }
 }
 
+function openContentItem(item){
+    content_items.addClass("hidden");
+    item.removeClass("hidden");
+}
+
 
 
 let background_type_functions = {
@@ -50,9 +56,12 @@ let background_type_functions = {
 all_menu_items.click(function(){
     const index = $(this).data("index");
     const background_type = $(this).data("background-type");
-    const section = section_container.eq(index);
+    const section = content_items.filter(function() {
+        return $(this).data("index") == index;
+    });
 
     background_type_functions[background_type]();
     hideMunuItem($(this));
+    openContentItem(section);
 });
 

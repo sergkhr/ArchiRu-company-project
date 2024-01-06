@@ -8,6 +8,7 @@
   --normal-animation-time: 0.3s;
   --fast-animation-time: 0.15s;
   --background-image-url: url("../src/skyscrapers_back_bad_quality.jpg");
+  --archi-menu-size: 80px;
 }
 @font-face {
   font-family: 'Vida32_probold';
