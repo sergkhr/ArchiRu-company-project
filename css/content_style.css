@@ -46,7 +46,7 @@
 }
 #content .menu_item_content {
   box-sizing: border-box;
-  width: 1480px;
+  width: var(--content-size);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,26 +54,6 @@
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
-}
-@media (max-width: 1919px) and (min-width: 1540px) {
-  #content .menu_item_content {
-    width: 1180px;
-  }
-}
-@media (max-width: 1539px) and (min-width: 1240px) {
-  #content .menu_item_content {
-    width: 900px;
-  }
-}
-@media (max-width: 1239px) and (min-width: 960px) {
-  #content .menu_item_content {
-    width: 900px;
-  }
-}
-@media (max-width: 959px) {
-  #content .menu_item_content {
-    width: 100%;
-  }
 }
 @keyframes hide_content {
   99% {
@@ -112,8 +92,8 @@
   animation-fill-mode: forwards;
   animation-direction: normal;
 }
-#content .menu_item_content .content_item.activity_info {
-  background-color: blue;
+#content .menu_item_content .content_item.hero {
+  border: none;
 }
 #content .menu_item_content .content_item.projects {
   background-color: red;

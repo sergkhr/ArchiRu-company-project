@@ -14,6 +14,33 @@
     --background-image-url: url("../src/skyscrapers_back_bad_quality.jpg");
 
     --archi-menu-size: 80px;
+    --menu-top-margin: 100px;
+
+
+    // sizes, depend on screen width
+    --content-size: 1480px;
+    --menu-for-eight-size: 280px;
+    --content-left-margin-to-border: 100px;
+    @media (max-width: 1919px) and (min-width: 1540px){
+        --content-size: 1180px;
+        --menu-for-eight-size: 210px;
+        --content-left-margin-to-border: 100px;
+    }
+    @media (max-width: 1539px) and (min-width: 1240px){
+        --content-size: 900px;
+        --menu-for-eight-size: 210px;
+        --content-left-margin-to-border: 80px;
+    }
+    //tablet
+    @media (max-width: 1239px) and (min-width: 960px){
+        --content-size: 900px;
+        --menu-for-eight-size: 210px;
+    }
+    //mobile
+    @media (max-width: 959px){
+        --content-size: 100%;
+        --menu-for-eight-size: 210px;
+    }
 }
 
 @font-face {

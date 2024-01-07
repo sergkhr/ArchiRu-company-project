@@ -54,26 +54,10 @@
     }
 
 
-
     .menu_item_content{
         // background-color: yellow;
         box-sizing: border-box;
-        width: 1480px;
-    
-        @media (max-width: 1919px) and (min-width: 1540px){
-            width: 1180px;
-        }
-        @media (max-width: 1539px) and (min-width: 1240px){
-            width: 900px;
-        }
-        //tablet
-        @media (max-width: 1239px) and (min-width: 960px){
-            width: 900px;
-        }
-        //mobile
-        @media (max-width: 959px){
-            width: 100%;
-        }
+        width: var(--content-size); //adaptivity is done in main.less (variable changes, dependong on window size)
     
         display: flex;
         justify-content: center;
@@ -126,11 +110,12 @@
             min-height: 100px;
             border: 1px solid rgb(var(--gray-color));
 
+            //for now its just empty space
+            &.hero{
+                border: none;
+            }
 
             // temporary placement for content styles
-            &.activity_info{
-                background-color: blue;
-            }
             &.projects{
                 background-color: red;
             }

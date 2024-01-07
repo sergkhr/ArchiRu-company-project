@@ -29,7 +29,9 @@ function turnContainerBackgroundToDark(){
     container.addClass("dark_background");
 }
 
-function hideMunuItem(item){
+
+
+function activateMenuItem(item){
     all_menu_items.removeClass("hidden"); //show all menu items before hiding one
     $("#menu .menu_item_border").removeClass("hidden");
 
@@ -40,6 +42,13 @@ function hideMunuItem(item){
     else{
         item.next().addClass("hidden");
     }
+
+
+    $("#selected_item_title .menu_item").addClass("hidden");
+    const index = item.data("index");
+    $("#selected_item_title .menu_item").filter(function() {
+        return $(this).data("index") == index;
+    }).removeClass("hidden");
 }
 
 function openContentItem(item){
@@ -61,7 +70,7 @@ all_menu_items.click(function(){
     });
 
     background_type_functions[background_type]();
-    hideMunuItem($(this));
+    activateMenuItem($(this));
     openContentItem(section);
 });
 

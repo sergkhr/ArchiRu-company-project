@@ -20,27 +20,11 @@
 
 
 #menu{
-    // sizes of menu items
-    --menu-for-eight-size: 280px;
     --item-important-size: calc(var(--menu-for-eight-size) / 7);
     --item-size: calc(var(--item-important-size) * 0.75);
-    @media (max-width: 1919px) and (min-width: 1540px){
-        --menu-for-eight-size: 210px;
-    }
-    @media (max-width: 1539px) and (min-width: 1240px){
-        --menu-for-eight-size: 210px;
-    }
-    //tablet
-    @media (max-width: 1239px) and (min-width: 960px){
-        --menu-for-eight-size: 210px;
-    }
-    //mobile
-    @media (max-width: 959px){
-        --menu-for-eight-size: 210px;
-    }
-    // sizes of menu items end
 
 
+    width: var(--menu-for-eight-size);
     display: flex;
 
     @bright_menu_item_style:{
@@ -98,11 +82,14 @@
         width: fit-content;
         height: 100%;
         margin: 0;
-        padding-top: 100px;
+        &:first-child{
+            margin-left: auto;
+        }
+        padding-top: var(--menu-top-margin);
         cursor: pointer;
         transition: background-color var(--fast-animation-time) ease-in-out, 
                     padding-top var(--fast-animation-time) ease-in-out,
-                    color var(--normal-animation-time) ease-in-out,
+                    color var(--fast-animation-time) ease-in-out,
                     border-left var(--normal-animation-time) ease-in-out, 
                     margin var(--normal-animation-time) ease-in-out,
                     padding var(--normal-animation-time) ease-in-out, 
@@ -113,7 +100,8 @@
                     opacity var(--fast-animation-time) ease-in-out;
         &:hover{
             background-color: rgb(var(--archiru-blue));
-            padding-top: 80px;
+            padding-top: calc(var(--menu-top-margin) - 20px);
+            color: rgb(var(--white-color));
         }
         b{
             transform: rotate(180deg);
@@ -213,6 +201,101 @@
         }
         .menu_item_border{
             background-color: rgb(var(--gray-color));
+        }
+    }
+}
+
+
+
+
+#selected_item_title{
+    position: absolute;
+    box-sizing: border-box;
+    height: 100vh;
+    top: 0;
+    left: 0; 
+
+    @media (max-width: 1239px){
+        border: none;
+        width: 100vw;
+        height: fit-content;
+        top: 0;
+        left: 0;
+    }
+
+
+    .menu_item{
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background-color: rgb(var(--archiru-blue));
+        color: rgb(var(--white-color));
+        font-size: 16px;
+        font-family: Vida32_pro, Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+
+        box-sizing: border-box;
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+        
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        min-width: 45px;
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
+        padding-top: calc(var(--menu-top-margin) + var(--archi-menu-size));
+        padding-bottom: 20px;
+
+        transition: border-left var(--normal-animation-time) ease-in-out,  
+                    min-width var(--normal-animation-time) ease-in-out, 
+                    width var(--normal-animation-time) ease-in-out,
+                    min-height var(--normal-animation-time) ease-in-out, 
+                    height var(--normal-animation-time) ease-in-out,
+                    opacity var(--fast-animation-time) ease-in-out;
+
+        b{
+            transform: rotate(180deg);
+            height: fit-content;
+            margin: 0;
+        }
+
+        &.hidden{
+            opacity: 0;
+            min-width: 0;
+            width: 0;
+        }
+
+
+        @media (max-width: 1239px){
+            writing-mode: horizontal-tb;
+            justify-content: flex-end;
+
+            min-width: none;
+            width: 100%;
+            min-height: calc(var(--item-important-size) + 5px);
+            height: fit-content;
+            padding-top: 0;
+            padding-right: 100px;
+            b{
+                transform: rotate(0deg);
+            }
+            &:hover{
+                padding-right: 80px;
+                padding-top: 0; //to compensate for padding-top: 80px default
+            }
+            &.hidden{
+                opacity: 0;
+                min-width: none;
+                width: 100%;
+                margin: 0;
+                min-height: 0;
+                height: 0;
+            }
         }
     }
 }

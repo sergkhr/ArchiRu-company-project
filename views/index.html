@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/menu_style.css">
     <link rel="stylesheet" href="../css/content_style.css">
+    
 </head>
 <body>
     <div id="archi_menu_container">
@@ -66,14 +67,40 @@
         </div>
 
 
-        <!-- data-index has to be equal to the respective menu index-->
+        <!--duplicates the menu, initialy all hidden -->
+        <div id="selected_item_title">
+            <li data-index="1" class="menu_item hidden">
+                <b>НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ</b>
+            </li>
+            <li data-index="2" class="menu_item hidden">
+                <b>АРХИТЕКТУРНЫЕ ПРОЕКТЫ</b>
+            </li>
+            <li data-index="3"  class="menu_item hidden">
+                <b>ТЕКСТЫ</b>
+            </li>
+            <li data-index="4"  class="menu_item hidden">
+                <b>СОБЫТИЯ</b>
+            </li>
+            <li data-index="5"  class="menu_item hidden">
+                <b>ВИДЕО</b>
+            </li>
+            <li data-index="6"  class="menu_item hidden">
+                <b>О КОМПАНИИ. ПОДРОБНЕЕ</b>
+            </li>
+            <li data-index="7" class="menu_item hidden">
+                <b>КОНТАКТЫ. ПОДРОБНЕЕ</b>
+            </li>
+            <li data-index="8"  class="menu_item hidden">
+                <b>СПЕЦПРОЕКТЫ</b>
+            </li>
+        </div>
 
+        <!-- data-index has to be equal to the respective menu index-->
         <div class="menu_item_content">
             <section class="hero content_item">
-
             </section>
     
-            <section class="activity_info content_item hidden" data-index="1">
+            <section class="activity content_item hidden" data-index="1">
     
             </section>
     

@@ -9,6 +9,36 @@
   --fast-animation-time: 0.15s;
   --background-image-url: url("../src/skyscrapers_back_bad_quality.jpg");
   --archi-menu-size: 80px;
+  --menu-top-margin: 100px;
+  --content-size: 1480px;
+  --menu-for-eight-size: 280px;
+  --content-left-margin-to-border: 100px;
+}
+@media (max-width: 1919px) and (min-width: 1540px) {
+  :root {
+    --content-size: 1180px;
+    --menu-for-eight-size: 210px;
+    --content-left-margin-to-border: 100px;
+  }
+}
+@media (max-width: 1539px) and (min-width: 1240px) {
+  :root {
+    --content-size: 900px;
+    --menu-for-eight-size: 210px;
+    --content-left-margin-to-border: 80px;
+  }
+}
+@media (max-width: 1239px) and (min-width: 960px) {
+  :root {
+    --content-size: 900px;
+    --menu-for-eight-size: 210px;
+  }
+}
+@media (max-width: 959px) {
+  :root {
+    --content-size: 100%;
+    --menu-for-eight-size: 210px;
+  }
 }
 @font-face {
   font-family: 'Vida32_probold';
