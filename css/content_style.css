@@ -81,11 +81,11 @@
   animation-fill-mode: forwards;
   animation-direction: normal;
   position: absolute;
+  top: 0;
   box-sizing: border-box;
   width: 100%;
   height: fit-content;
   min-height: 100px;
-  border: 1px solid rgb(var(--gray-color));
 }
 #content .menu_item_content .content_item.hidden {
   animation: hide_content var(--normal-animation-time) ease-in-out;
