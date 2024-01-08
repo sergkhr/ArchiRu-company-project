@@ -71,6 +71,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 99;
 }
 @media (max-width: 1239px) {
   #logo {

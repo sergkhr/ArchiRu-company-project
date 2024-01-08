@@ -8,6 +8,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(var(--white-color));
+  box-shadow: 0px -80px 18px 79px #000000;
 }
 #archi_menu {
   background-color: gray;
@@ -18,8 +20,10 @@
 #menu {
   --item-important-size: calc(var(--menu-for-eight-size) / 7);
   --item-size: calc(var(--item-important-size) * 0.75);
-  width: var(--menu-for-eight-size);
   display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 98;
 }
 #menu .menu_item[data-index="1"] {
   color: rgb(var(--white-color));
@@ -94,7 +98,7 @@
   width: fit-content;
   height: 100%;
   margin: 0;
-  padding-top: var(--menu-top-margin);
+  padding-top: calc(var(--menu-top-margin) + var(--archi-menu-size));
   cursor: pointer;
   transition: background-color var(--fast-animation-time) ease-in-out, padding-top var(--fast-animation-time) ease-in-out, color var(--fast-animation-time) ease-in-out, border-left var(--normal-animation-time) ease-in-out, margin var(--normal-animation-time) ease-in-out, padding var(--normal-animation-time) ease-in-out, min-width var(--normal-animation-time) ease-in-out, width var(--normal-animation-time) ease-in-out, min-height var(--normal-animation-time) ease-in-out, height var(--normal-animation-time) ease-in-out, opacity var(--fast-animation-time) ease-in-out;
 }
@@ -103,7 +107,7 @@
 }
 #menu .menu_item:hover {
   background-color: rgb(var(--archiru-blue));
-  padding-top: calc(var(--menu-top-margin) - 20px);
+  padding-top: calc(var(--menu-top-margin) + var(--archi-menu-size) - 20px);
   color: rgb(var(--white-color));
 }
 #menu .menu_item b {
@@ -148,9 +152,7 @@
   background-color: rgba(var(--white-color), 20%);
   content: "";
   width: 1px;
-  height: calc(100% + var(--archi-menu-size));
   position: relative;
-  top: calc(-1 * var(--archi-menu-size));
   transition: opacity var(--fast-animation-time) ease-in-out, width var(--fast-animation-time) ease-in-out, height var(--fast-animation-time) ease-in-out, background-color var(--fast-animation-time) ease-in-out;
 }
 #menu .menu_item_border.hidden {
@@ -198,11 +200,12 @@
   background-color: rgb(var(--gray-color));
 }
 #selected_item_title {
-  position: absolute;
+  position: fixed;
   box-sizing: border-box;
   height: 100vh;
   top: 0;
   left: 0;
+  z-index: 98;
 }
 @media (max-width: 1239px) {
   #selected_item_title {
@@ -234,7 +237,7 @@
   height: fit-content;
   margin: 0;
   padding-top: calc(var(--menu-top-margin) + var(--archi-menu-size));
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   transition: border-left var(--normal-animation-time) ease-in-out, min-width var(--normal-animation-time) ease-in-out, width var(--normal-animation-time) ease-in-out, min-height var(--normal-animation-time) ease-in-out, height var(--normal-animation-time) ease-in-out, opacity var(--fast-animation-time) ease-in-out;
 }
 #selected_item_title .menu_item b {
