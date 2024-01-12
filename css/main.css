@@ -59,6 +59,25 @@ body {
   position: relative;
   z-index: -100;
 }
+html h1,
+body h1,
+html h2,
+body h2,
+html h3,
+body h3,
+html h4,
+body h4,
+html h5,
+body h5,
+html h6,
+body h6,
+html p,
+body p,
+html b,
+body b {
+  margin: 0;
+  padding: 0;
+}
 #logo {
   width: 100px;
   height: 100px;
@@ -68,7 +87,7 @@ body {
   align-items: center;
   background-color: rgb(var(--white-color));
   margin: 0;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   z-index: 99;

@@ -23,6 +23,7 @@
   display: flex;
   position: fixed;
   top: 0;
+  right: 0;
   z-index: 98;
 }
 #menu .menu_item[data-index="1"] {

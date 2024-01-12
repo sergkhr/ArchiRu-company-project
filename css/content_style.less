@@ -1,16 +1,22 @@
 
 #content{
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: center;
 
     height: calc(100vh - var(--archi-menu-size));
     padding-top: var(--archi-menu-size);
 
-    background-image: var(--background-image-url);
-    background-size: cover; /* Enlarge the image horizontally */
-    background-position: right top; /* Start from the right border */
-    background-repeat: no-repeat; /* Prevent repetition */
-    background-clip: border-box;
+    .background-image{
+        background-image: var(--background-image-url);
+        background-size: cover; /* Enlarge the image horizontally */
+        background-position: center; /* Start from the right border */
+        background-repeat: no-repeat; /* Prevent repetition */
+        background-clip: border-box;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        z-index: -50;
+    }
     position: relative;
     z-index: -10;
 
@@ -19,7 +25,7 @@
         background-image: var(--dark-gradient);
         width: 100%;
         height: 100%;
-        position: absolute;
+        position: fixed;
         opacity: 0;
         top: 0;
         left: 0;
@@ -33,7 +39,7 @@
         width: 100%;
         height: 100%;
         opacity: 0;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         z-index: -8;
@@ -62,9 +68,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 100px auto 110px auto;
+        margin: 0 auto;
         overflow-x: hidden;
-        overflow-y: auto;
+        // overflow-y: auto;
         position: relative;
 
 
@@ -84,7 +90,6 @@
         @keyframes show_content {
             0%{
                 transform: translateX(100%);
-                display: none;
             }
             1%{
                 transform: translateX(100%);
@@ -104,7 +109,7 @@
             }
     
             position: absolute;
-            top: 0;
+            top: var(--menu-top-margin);
             box-sizing: border-box;
             width: 100%;
             height: fit-content;

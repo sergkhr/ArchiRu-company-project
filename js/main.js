@@ -5,7 +5,39 @@ let logo = $("#logo");
 let section_container = $(".menu_item_content");
 let content_items = $(".content_item");
 
+let normal_animation_time = parseFloat($(":root").css("--normal-animation-time"), 10) * 1000;
 
+
+
+function load_resize(){ // same code on load and on resize
+    updateContentContainerHeight();
+}
+$(document).ready(function(){
+    load_resize();
+});
+$(window).on("resize", function(){
+    load_resize();
+});
+
+
+
+function updateContentContainerHeight(additional_element_height = 0){
+    let additional_height = parseInt($(":root").css("--menu-top-margin"), 10) * 2 + 10;
+    let maxHeight = additional_element_height; 
+
+    // Iterate through each child of the main element
+    section_container.children(".content_item").not('.hidden').each(function() {
+        // Get the height of the current non-hidden child
+        const childHeight = $(this).outerHeight(true); // Including margins
+        // Update the maxHeight if the current child's height is greater
+        if (childHeight > maxHeight) {
+            maxHeight = childHeight;
+        }
+    });
+
+    // Set the height of the main element to the maxHeight + 200px
+    section_container.height(maxHeight + additional_height);
+}
 
 function cleanBackgroundStates(element){
     element.removeClass("white_background");
@@ -52,8 +84,23 @@ function activateMenuItem(item){
 }
 
 function openContentItem(item){
+    let previous_item = content_items.filter(function() {
+        return !$(this).hasClass("hidden");
+    });
+    let previous_height = previous_item.outerHeight(true);
+
     content_items.addClass("hidden");
     item.removeClass("hidden");
+
+    let iteration_count = 0;
+    updateContentContainerHeight(previous_height);
+    item.on("animationend", function(event){
+        //check for animation name
+        if(event.originalEvent.animationName != "show_content"){
+            return;
+        }
+        updateContentContainerHeight();
+    });
 }
 
 
