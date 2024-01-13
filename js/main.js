@@ -14,6 +14,7 @@ function load_resize(){ // same code on load and on resize
 }
 $(document).ready(function(){
     load_resize();
+    eventsSetRandomizedTitlePositions();
 });
 $(window).on("resize", function(){
     load_resize();
@@ -37,6 +38,18 @@ function updateContentContainerHeight(additional_element_height = 0){
 
     // Set the height of the main element to the maxHeight + 200px
     section_container.height(maxHeight + additional_height);
+}
+
+function eventsSetRandomizedTitlePositions(){
+    let titles = $(".content_item.events .block .image_place");
+    let vertical_classes = ["top", "bottom"];
+    let horizontal_classes = ["right", "left"];
+    titles.each(function(){
+        let vertical_class = vertical_classes[Math.floor(Math.random() * vertical_classes.length)];
+        let horizontal_class = horizontal_classes[Math.floor(Math.random() * horizontal_classes.length)];
+        $(this).addClass(vertical_class);
+        $(this).addClass(horizontal_class);
+    });
 }
 
 function cleanBackgroundStates(element){

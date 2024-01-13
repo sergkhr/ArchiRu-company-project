@@ -107,7 +107,7 @@
   margin-left: auto;
 }
 #menu .menu_item:hover {
-  background-color: rgb(var(--archiru-blue));
+  background-color: rgb(var(--blue-color));
   padding-top: calc(var(--menu-top-margin) + var(--archi-menu-size) - 20px);
   color: rgb(var(--white-color));
 }
@@ -221,7 +221,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgb(var(--archiru-blue));
+  background-color: rgb(var(--blue-color));
   color: rgb(var(--white-color));
   font-size: 16px;
   font-family: Vida32_pro, Arial, Helvetica, sans-serif;
