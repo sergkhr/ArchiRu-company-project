@@ -22,8 +22,8 @@
 
 
 #menu{
-    --item-important-size: calc(var(--menu-for-eight-size) / 7);
-    --item-size: calc(var(--item-important-size) * 0.75);
+    --item-important-size: calc(var(--menu-for-eight-size) / 8);
+    --item-size: var(--item-important-size);
 
 
     // width: var(--menu-for-eight-size);
@@ -204,6 +204,9 @@
 
         .menu_item{
             color: rgb(var(--gray-medium-color));
+            &:hover{
+                color: rgb(var(--white-color));
+            }
         }
         .menu_item_border{
             background-color: rgb(var(--gray-color));
@@ -251,9 +254,9 @@
         display: flex;
         align-items: center;
 
-        min-width: 45px;
+        min-width: calc(var(--menu-for-eight-size) / 8);
         width: fit-content;
-        height: fit-content;
+        height: 100%;
         margin: 0;
         padding-top: calc(var(--menu-top-margin) + var(--archi-menu-size));
         padding-bottom: 40px;

@@ -2,8 +2,8 @@
   --block-width: 280px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--block-width), 1fr));
-  grid-column-gap: 20px;
-  grid-row-gap: 40px;
+  grid-column-gap: var(--standart-gap);
+  grid-row-gap: var(--standart-gap);
 }
 @media (max-width: 479px) {
   #content .menu_item_content .content_item.events {
