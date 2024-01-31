@@ -69,7 +69,7 @@
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        overflow-x: hidden;
+        overflow: hidden;
         // overflow-y: auto;
         position: relative;
 
@@ -124,6 +124,44 @@
             // temporary placement for content styles
             &.projects{
                 background-color: red;
+            }
+
+
+            .more{
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: calc(var(--standart-gap) * 3);
+                // margin-bottom: calc(var(--standart-gap) * 2);
+                gap: var(--standart-gap);
+
+                .open_more_btn{
+                    font-family: Vida32_pro, Arial, Helvetica, sans-serif;
+                    font-size: 22px;
+                    font-weight: 400;
+                    line-height: 25px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    cursor: pointer;
+
+                    color: rgb(var(--black-color));
+                    &:hover{
+                        color: rgb(var(--blue-color));
+                    }
+                }
+
+                .info{
+                    font-family: Vida32_pro, Arial, Helvetica, sans-serif;
+                    font-size: 22px;
+                    font-weight: 400;
+                    line-height: 25px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    cursor: context-menu;
+
+                    color: rgb(var(--gray-medium-color));
+                }
             }
         }
     }

@@ -1,4 +1,4 @@
-#content .menu_item_content .content_item.events {
+#content .menu_item_content .content_item.events .container {
   --block-width: 280px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--block-width), 1fr));
@@ -6,11 +6,11 @@
   grid-row-gap: var(--standart-gap);
 }
 @media (max-width: 479px) {
-  #content .menu_item_content .content_item.events {
+  #content .menu_item_content .content_item.events .container {
     --block-width: 100%;
   }
 }
-#content .menu_item_content .content_item.events .block {
+#content .menu_item_content .content_item.events .container .block {
   --standart-gap: 20px;
   width: 100%;
   box-sizing: border-box;
@@ -19,7 +19,7 @@
   flex-direction: column;
   border: 1px solid rgb(var(--gray-color));
 }
-#content .menu_item_content .content_item.events .block .date {
+#content .menu_item_content .content_item.events .container .block .date {
   color: rgb(var(--dark-gray-color));
   font-family: Arial;
   font-size: 13px;
@@ -30,14 +30,14 @@
   text-align: left;
   margin-bottom: var(--standart-gap);
 }
-#content .menu_item_content .content_item.events .block .image_place {
+#content .menu_item_content .content_item.events .container .block .image_place {
   --img-size: 140px;
   height: var(--img-size);
   width: 100%;
   margin-bottom: var(--standart-gap);
   position: relative;
 }
-#content .menu_item_content .content_item.events .block .image_place img {
+#content .menu_item_content .content_item.events .container .block .image_place img {
   position: absolute;
   top: 0;
   width: var(--img-size);
@@ -46,7 +46,7 @@
   object-fit: cover;
   overflow: hidden;
 }
-#content .menu_item_content .content_item.events .block .image_place .event_type {
+#content .menu_item_content .content_item.events .container .block .image_place .event_type {
   background-color: rgb(var(--white-color));
   color: rgb(var(--blue-color));
   font-family: Vida32_pro, Arial, Helvetica, sans-serif;
@@ -64,27 +64,27 @@
   display: flex;
   align-items: center;
 }
-#content .menu_item_content .content_item.events .block .image_place.top .event_type {
+#content .menu_item_content .content_item.events .container .block .image_place.top .event_type {
   top: 0;
 }
-#content .menu_item_content .content_item.events .block .image_place.bottom .event_type {
+#content .menu_item_content .content_item.events .container .block .image_place.bottom .event_type {
   bottom: 0;
 }
-#content .menu_item_content .content_item.events .block .image_place.left img {
+#content .menu_item_content .content_item.events .container .block .image_place.left img {
   left: 0;
 }
-#content .menu_item_content .content_item.events .block .image_place.left .event_type {
+#content .menu_item_content .content_item.events .container .block .image_place.left .event_type {
   left: calc(var(--img-size) / 2);
   text-align: left;
 }
-#content .menu_item_content .content_item.events .block .image_place.right img {
+#content .menu_item_content .content_item.events .container .block .image_place.right img {
   right: 0;
 }
-#content .menu_item_content .content_item.events .block .image_place.right .event_type {
+#content .menu_item_content .content_item.events .container .block .image_place.right .event_type {
   right: calc(var(--img-size) / 2);
   text-align: right;
 }
-#content .menu_item_content .content_item.events .block h4 {
+#content .menu_item_content .content_item.events .container .block h4 {
   color: rgb(var(--black-color));
   font-family: Vida32_pro, Arial, Helvetica, sans-serif;
   font-size: 22px;
@@ -94,7 +94,7 @@
   text-align: left;
   margin-bottom: calc(var(--standart-gap) / 2);
 }
-#content .menu_item_content .content_item.events .block .description {
+#content .menu_item_content .content_item.events .container .block .description {
   color: rgb(var(--dark-gray-color));
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
@@ -104,7 +104,7 @@
   text-align: left;
   margin-bottom: var(--standart-gap);
 }
-#content .menu_item_content .content_item.events .block .address {
+#content .menu_item_content .content_item.events .container .block .address {
   color: rgb(var(--black-color));
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;

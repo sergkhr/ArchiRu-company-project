@@ -1,35 +1,35 @@
-#content .menu_item_content .content_item.activity {
+#content .menu_item_content .content_item.activity .container {
   --block-width: calc(100% / 4);
   --block-height: fit-content;
   display: flex;
   flex-wrap: wrap;
 }
 @media (max-width: 1919px) and (min-width: 1540px) {
-  #content .menu_item_content .content_item.activity {
+  #content .menu_item_content .content_item.activity .container {
     --block-width: calc(100% / 3);
   }
 }
 @media (max-width: 1539px) and (min-width: 1240px) {
-  #content .menu_item_content .content_item.activity {
+  #content .menu_item_content .content_item.activity .container {
     --block-width: calc(100% / 2);
   }
 }
 @media (max-width: 1239px) and (min-width: 960px) {
-  #content .menu_item_content .content_item.activity {
+  #content .menu_item_content .content_item.activity .container {
     --block-width: calc(100% / 3);
   }
 }
 @media (max-width: 959px) and (min-width: 480px) {
-  #content .menu_item_content .content_item.activity {
+  #content .menu_item_content .content_item.activity .container {
     --block-width: calc(100% / 2);
   }
 }
 @media (max-width: 479px) {
-  #content .menu_item_content .content_item.activity {
+  #content .menu_item_content .content_item.activity .container {
     --block-width: 100%;
   }
 }
-#content .menu_item_content .content_item.activity .block {
+#content .menu_item_content .content_item.activity .container .block {
   box-sizing: border-box;
   width: var(--block-width);
   min-height: var(--block-height);
@@ -40,14 +40,14 @@
   color: rgb(var(--white-color));
   border: 1px solid rgb(var(--gray-color));
 }
-#content .menu_item_content .content_item.activity .block img {
+#content .menu_item_content .content_item.activity .container .block img {
   align-self: flex-start;
   border-radius: 50%;
   width: 200px;
   height: 200px;
   margin-bottom: 30px;
 }
-#content .menu_item_content .content_item.activity .block h3 {
+#content .menu_item_content .content_item.activity .container .block h3 {
   font-family: Vida32_probold, Arial, Helvetica, sans-serif;
   font-size: 30px;
   font-weight: 400;
@@ -58,7 +58,7 @@
   margin-bottom: 20px;
   overflow: hidden;
 }
-#content .menu_item_content .content_item.activity .block p {
+#content .menu_item_content .content_item.activity .container .block p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
   font-weight: 400;
