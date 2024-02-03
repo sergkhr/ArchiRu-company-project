@@ -1,3 +1,27 @@
+@keyframes hide_content {
+    0%{
+
+    }
+    99%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(100%);
+        display: none;
+    }
+}
+@keyframes show_content {
+    0%{
+        transform: translateX(100%);
+    }
+    1%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
 
 #content{
     display: flex;
@@ -30,7 +54,7 @@
         top: 0;
         left: 0;
         z-index: -9;
-        transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.3s ease;
     }
     
     &::after{
@@ -43,12 +67,17 @@
         top: 0;
         left: 0;
         z-index: -8;
-        transition: opacity 0.3s ease-in-out;
+        transition: opacity 1.5s cubic-bezier(.24,-0.04,.17,1.07);
     }
 
     &.dark_background{
         &::before{
             opacity: 1;
+            transition: opacity 1s ease;
+        }
+
+        .menu_item_content .content_item{
+            animation: show_content 1s ease;
         }
     }
 
@@ -56,6 +85,7 @@
     &.white_background{
         &::after{
             opacity: 1;
+            transition: opacity var(--normal-animation-time) ease;
         }
     }
 
@@ -75,35 +105,13 @@
 
 
 
-        @keyframes hide_content {
-            0%{
-
-            }
-            99%{
-                transform: translateX(100%);
-            }
-            100%{
-                transform: translateX(100%);
-                display: none;
-            }
-        }
-        @keyframes show_content {
-            0%{
-                transform: translateX(100%);
-            }
-            1%{
-                transform: translateX(100%);
-            }
-            100%{
-                transform: translateX(0%);
-            }
-        }
+        
         .content_item{
-            animation: show_content var(--normal-animation-time) ease-in-out;
+            animation: show_content var(--normal-animation-time) ease;
             animation-fill-mode: forwards;
             animation-direction: normal;
             &.hidden{
-                animation: hide_content var(--normal-animation-time) ease-in-out;
+                animation: hide_content var(--normal-animation-time) ease;
                 animation-fill-mode: forwards;
                 animation-direction: normal;
             }

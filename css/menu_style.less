@@ -93,17 +93,17 @@
         }
         padding-top: calc(var(--menu-top-margin) + var(--archi-menu-size));
         cursor: pointer;
-        transition: background-color var(--fast-animation-time) ease-in-out, 
-                    padding-top var(--fast-animation-time) ease-in-out,
-                    color var(--fast-animation-time) ease-in-out,
-                    border-left var(--normal-animation-time) ease-in-out, 
-                    margin var(--normal-animation-time) ease-in-out,
-                    padding var(--normal-animation-time) ease-in-out, 
-                    min-width var(--normal-animation-time) ease-in-out, 
-                    width var(--normal-animation-time) ease-in-out,
-                    min-height var(--normal-animation-time) ease-in-out, 
-                    height var(--normal-animation-time) ease-in-out,
-                    opacity var(--fast-animation-time) ease-in-out;
+        transition: background-color var(--fast-animation-time) ease, 
+                    padding-top var(--fast-animation-time) ease,
+                    color var(--fast-animation-time) ease,
+                    border-left var(--normal-animation-time) ease, 
+                    margin var(--normal-animation-time) ease,
+                    padding var(--normal-animation-time) ease, 
+                    min-width var(--normal-animation-time) ease, 
+                    width var(--normal-animation-time) ease,
+                    min-height var(--normal-animation-time) ease, 
+                    height var(--normal-animation-time) ease,
+                    opacity var(--fast-animation-time) ease;
         &:hover{
             background-color: rgb(var(--blue-color));
             padding-top: calc(var(--menu-top-margin) + var(--archi-menu-size) - 20px);
@@ -159,10 +159,10 @@
         // height: calc(100% + var(--archi-menu-size));
         position: relative;
         // top: calc(-1 * var(--archi-menu-size));
-        transition: opacity var(--fast-animation-time) ease-in-out, 
-                    width var(--fast-animation-time) ease-in-out, 
-                    height var(--fast-animation-time) ease-in-out,
-                    background-color var(--fast-animation-time) ease-in-out;
+        transition: opacity var(--fast-animation-time) ease, 
+                    width var(--fast-animation-time) ease, 
+                    height var(--fast-animation-time) ease,
+                    background-color var(--fast-animation-time) ease;
 
         &.hidden{
             opacity: 0;
@@ -261,12 +261,12 @@
         padding-top: calc(var(--menu-top-margin) + var(--archi-menu-size));
         padding-bottom: 40px;
 
-        transition: border-left var(--normal-animation-time) ease-in-out,  
-                    min-width var(--normal-animation-time) ease-in-out, 
-                    width var(--normal-animation-time) ease-in-out,
-                    min-height var(--normal-animation-time) ease-in-out, 
-                    height var(--normal-animation-time) ease-in-out,
-                    opacity var(--fast-animation-time) ease-in-out;
+        transition: border-left var(--normal-animation-time) ease,  
+                    min-width var(--normal-animation-time) ease, 
+                    width var(--normal-animation-time) ease,
+                    min-height var(--normal-animation-time) ease, 
+                    height var(--normal-animation-time) ease,
+                    opacity var(--fast-animation-time) ease;
 
         b{
             transform: rotate(180deg);

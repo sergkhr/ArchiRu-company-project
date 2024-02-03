@@ -15,6 +15,10 @@ function load_resize(){ // same code on load and on resize
 $(document).ready(function(){
     load_resize();
     eventsSetRandomizedTitlePositions();
+
+    all_menu_items.filter(function() { // first seen page is texts
+        return $(this).data("index") == 3;
+    }).trigger("click");
 });
 $(window).on("resize", function(){
     load_resize();
@@ -71,7 +75,9 @@ function turnContainerBackgroundToWhite(){
 function turnContainerBackgroundToDark(){
     cleanBackgroundStates(container);
     cleanMenuStates();
-    container.addClass("dark_background");
+    setTimeout(function(){
+        container.addClass("dark_background");
+    }, background_type_change_delay["dark"]);
 }
 
 
@@ -96,24 +102,25 @@ function activateMenuItem(item){
     }).removeClass("hidden");
 }
 
-function openContentItem(item){
+function openContentItem(item, background_type = null){
     let previous_item = content_items.filter(function() {
         return !$(this).hasClass("hidden");
     });
     let previous_height = previous_item.outerHeight(true);
 
     content_items.addClass("hidden");
-    item.removeClass("hidden");
+    setTimeout(function(){
+        item.removeClass("hidden");
 
-    let iteration_count = 0;
-    updateContentContainerHeight(previous_height);
-    item.on("animationend", function(event){
-        //check for animation name
-        if(event.originalEvent.animationName != "show_content"){
-            return;
-        }
-        updateContentContainerHeight();
-    });
+        updateContentContainerHeight(previous_height);
+        item.on("animationend", function(event){
+            //check for animation name
+            if(event.originalEvent.animationName != "show_content"){
+                return;
+            }
+            updateContentContainerHeight();
+        });
+    }, background_type_change_delay[background_type] * 1.25);
 }
 
 
@@ -121,6 +128,11 @@ function openContentItem(item){
 let background_type_functions = {
     "white": turnContainerBackgroundToWhite,
     "dark": turnContainerBackgroundToDark
+}
+let background_type_change_delay = {
+    null: 0,
+    "white": 0,
+    "dark": 1500
 }
 all_menu_items.click(function(){
     const index = $(this).data("index");
@@ -131,6 +143,6 @@ all_menu_items.click(function(){
 
     background_type_functions[background_type]();
     activateMenuItem($(this));
-    openContentItem(section);
+    openContentItem(section, background_type);
 });
 
