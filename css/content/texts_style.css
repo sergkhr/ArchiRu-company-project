@@ -6,11 +6,6 @@
   grid-column-gap: var(--standart-gap);
   grid-row-gap: var(--standart-gap);
 }
-@media (max-width: 479px) {
-  #content .menu_item_content .content_item.texts .container {
-    --col-width: calc((100% - var(--standart-gap)) / 2);
-  }
-}
 #content .menu_item_content .content_item.texts .container .block.small {
   box-sizing: border-box;
   display: flex;
@@ -310,4 +305,59 @@
   letter-spacing: 0.1em;
   text-align: right;
   margin-top: auto;
+}
+@media (max-width: 959px) {
+  #content .menu_item_content .content_item.texts .container {
+    --col-width: calc(50% - var(--standart-gap) / 2);
+  }
+  #content .menu_item_content .content_item.texts .container .block.small {
+    grid-column: span 1;
+  }
+  #content .menu_item_content .content_item.texts .container .block.small img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+  #content .menu_item_content .content_item.texts .container .block.medium {
+    grid-column: span 2;
+  }
+  #content .menu_item_content .content_item.texts .container .block.medium img {
+    width: 100%;
+    aspect-ratio: 580 / 280;
+    height: auto;
+  }
+  #content .menu_item_content .content_item.texts .container .block.big {
+    grid-column: span 2;
+  }
+  #content .menu_item_content .content_item.texts .container .block.big img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+}
+@media (max-width: 580px) {
+  #content .menu_item_content .content_item.texts .container {
+    --col-width: 100%;
+  }
+  #content .menu_item_content .content_item.texts .container .block.small img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+  #content .menu_item_content .content_item.texts .container .block.medium {
+    grid-column: span 1;
+  }
+  #content .menu_item_content .content_item.texts .container .block.medium img {
+    width: 100%;
+    aspect-ratio: 580 / 280;
+    height: auto;
+  }
+  #content .menu_item_content .content_item.texts .container .block.big {
+    grid-column: span 1;
+  }
+  #content .menu_item_content .content_item.texts .container .block.big img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
 }
