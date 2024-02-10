@@ -1,0 +1,17 @@
+#content .menu_item_content .content_item.projects .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--col-width), 1fr));
+    grid-auto-flow: row dense;
+    grid-column-gap: var(--standart-gap);
+    grid-row-gap: var(--standart-gap);
+
+    @block_small:{
+        grid-column: span 1;
+    };
+    @block_medium:{
+        grid-column: span 2;
+    };
+    @block_big:{
+        grid-column: span 3;
+    };
+}
