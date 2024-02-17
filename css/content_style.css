@@ -104,9 +104,6 @@
 #content .menu_item_content .content_item.hero {
   border: none;
 }
-#content .menu_item_content .content_item.projects {
-  background-color: red;
-}
 #content .menu_item_content .content_item .more {
   box-sizing: border-box;
   display: flex;
