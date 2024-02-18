@@ -11,6 +11,11 @@ let normal_animation_time = parseFloat($(":root").css("--normal-animation-time")
 
 function load_resize(){ // same code on load and on resize
     updateContentContainerHeight();
+
+    // let projectsSection = $(".content_item.projects");
+    // if(!projectsSection.hasClass("hidden")){
+    //     updateProjectsBlocksHeight();
+    // }
 }
 $(document).ready(function(){
     load_resize();
@@ -42,6 +47,18 @@ function updateContentContainerHeight(additional_element_height = 0){
 
     // Set the height of the main element to the maxHeight + 200px
     section_container.height(maxHeight + additional_height);
+}
+
+function updateProjectsBlocksHeight(){
+    let blocks = $(".content_item.projects .block");
+
+    blocks.each(function() {
+        let block = $(this);
+        let object = block.children(".object");
+        let object_height = object.outerHeight(true);
+        let connected = block.children(".connected");
+        connected.height(object_height);
+    });
 }
 
 function eventsSetRandomizedTitlePositions(){
@@ -102,7 +119,14 @@ function activateMenuItem(item){
     }).removeClass("hidden");
 }
 
+// function contentOpeningRoutine(item){ // what is done when content is opened
+//     if(item.hasClass("projects")){
+//         updateProjectsBlocksHeight();
+//     }
+// }
 function openContentItem(item, background_type = null){
+    // contentOpeningRoutine(item);
+
     let previous_item = content_items.filter(function() {
         return !$(this).hasClass("hidden");
     });
