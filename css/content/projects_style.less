@@ -1,6 +1,7 @@
 #content .menu_item_content .content_item.projects .container{
     --col-width: 210px;
     --connected-type-height: 20px;
+    --connected-right-margin: 5px;
     
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--col-width), 1fr));
@@ -9,15 +10,23 @@
     grid-row-gap: var(--standart-gap);
 
     @connected-inner-two-col-style:{
-        grid-column: span 2;
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--standart-gap);
     }
     @connected-inner-one-col-style:{
-        grid-column: span 1;
+        width: 100%;
         display: flex;
         flex-direction: column;
+    }
+    @inner-block-two-col-style:{
+        grid-column: span 2;
+        position: relative;
+    }
+    @inner-block-one-col-style:{
+        grid-column: span 1;
+        position: relative;
     }
 
     .block{
@@ -105,6 +114,16 @@
                 .participation{
                     @connected-inner-two-col-style();
                 }
+
+                .article_block{
+                    @inner-block-two-col-style();
+                }
+                .participation_block{
+                    @inner-block-two-col-style();
+                }
+                .connected_object_block{
+                    @inner-block-two-col-style();
+                }
             }
             &[data-size="1"]{
                 grid-column: span 1;
@@ -114,12 +133,33 @@
                 .article{
                     @connected-inner-one-col-style();
                 }
+                
                 .participation{
                     @connected-inner-one-col-style();
                     flex-direction: column-reverse;
+                    justify-content: flex-end;
+                }
+                .article_block{
+                    @inner-block-one-col-style();
+                }
+                .participation_block{
+                    @inner-block-one-col-style();
+                }
+                .connected_object_block{
+                    @inner-block-one-col-style();
                 }
             }
-
+            @block-common-style:{
+                position: relative;
+                padding-top: var(--connected-type-height);
+                border-bottom: 1px solid rgb(var(--gray-color));
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                &:last-child{
+                    border-bottom: none;
+                }
+            }
             .connected_container{
                 position: absolute;
                 box-sizing: border-box;
@@ -130,10 +170,19 @@
                 flex-direction: column;
                 overflow: auto;
             }
+            .article_block{
+                @block-common-style();
+            }
+            .participation_block{
+                @block-common-style();
+            }
+            .connected_object_block{
+                @block-common-style();
+            }
+
+            
 
             .article{
-                position: relative;
-                padding-top: calc(var(--connected-type-height) + 5px);
                 border-bottom: 1px solid rgb(var(--gray-color));
                 &:last-child{
                     border-bottom: none;
@@ -147,6 +196,7 @@
                 }
 
                 .text_place{
+                    margin-right: var(--connected-right-margin);
                     h4{
                         font-family: Vida32_pro, Arial, Helvetica, sans-serif;
                         font-size: 22px;
@@ -172,8 +222,7 @@
             }
 
             .participation{
-                position: relative;
-                padding-top: calc(var(--connected-type-height));
+                flex-grow: 1;
                 border-bottom: 1px solid rgb(var(--gray-color));
                 &:last-child{
                     border-bottom: none;
@@ -184,6 +233,7 @@
                     flex-direction: column;
                     align-items: center;
                     gap: var(--standart-gap);
+                    margin-top: calc(var(--standart-gap) - 3px);
                     img{
                         width: 100%;
                         max-width: 100px;
@@ -198,6 +248,8 @@
                     line-height: 20px;
                     letter-spacing: 0em;
                     text-align: left;
+
+                    margin-right: var(--connected-right-margin);
                 }
             }
 
