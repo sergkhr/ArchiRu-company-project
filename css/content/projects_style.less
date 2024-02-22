@@ -2,6 +2,7 @@
     --col-width: 210px;
     --connected-type-height: 20px;
     --connected-right-margin: 5px;
+    --connected-margin-for-scroll-icon: 30px;
     
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--col-width), 1fr));
@@ -170,6 +171,26 @@
                 flex-direction: column;
                 overflow: auto;
             }
+
+            .scroll_icon{
+                position: absolute;
+                top: 5px;
+                right: 20px;
+                display: none;
+            }
+
+            &.scrollable{
+                .participation_block:first-child{
+                    margin-top: var(--connected-margin-for-scroll-icon);  
+                    padding-top: 0;
+                    .connected_type{
+                        top: calc(-1 * var(--connected-margin-for-scroll-icon));
+                    }
+                }
+                .scroll_icon{
+                    display: block;
+                }
+            }
             .article_block{
                 @block-common-style();
             }
@@ -279,14 +300,70 @@
     }
 
 
+    @connected-turn-two-to-one:{
+        grid-column: span 1;
+        .connected_container{
+            border-left: none;
+        }
+        .article{
+            @connected-inner-one-col-style();
+        }
+        
+        .participation{
+            @connected-inner-one-col-style();
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+        }
+        .article_block{
+            @inner-block-one-col-style();
+        }
+        .participation_block{
+            @inner-block-one-col-style();
+        }
+        .connected_object_block{
+            @inner-block-one-col-style();
+        }
+    }
+
     //tablet
     @media (max-width: 959px) and (min-width: 700px){
         --col-width: calc((100% - 2*var(--standart-gap)) / 3); //three columns
-        
+
+        .block{
+            &[data-size="4"]{
+                grid-column: span 3;
+                grid-template-columns: repeat(3, 1fr);
+                .connected[data-size="2"]{
+                    @connected-turn-two-to-one();
+                }
+            }
+        }
     }
     @media (max-width: 699px) and (min-width: 450px){
         --col-width: calc((100% - 1*var(--standart-gap)) / 2); //two columns
         
+        .block{
+            &[data-size="4"]{
+                grid-column: span 2;
+                grid-template-columns: repeat(2, 1fr);
+                .object[data-size="2"]{
+                    grid-column: span 1;
+                }
+                .connected[data-size="2"]{
+                    @connected-turn-two-to-one();
+                }
+            }
+            &[data-size="3"]{
+                grid-column: span 2;
+                grid-template-columns: repeat(2, 1fr);
+                .object[data-size="2"]{
+                    grid-column: span 1;
+                }
+                .connected[data-size="2"]{
+                    @connected-turn-two-to-one();
+                }
+            }
+        }
     }
     @media (max-width: 449px){
         --col-width: 100%;

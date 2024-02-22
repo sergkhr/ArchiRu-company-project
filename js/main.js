@@ -11,6 +11,7 @@ let normal_animation_time = parseFloat($(":root").css("--normal-animation-time")
 
 function load_resize(){ // same code on load and on resize
     updateContentContainerHeight();
+    projectsCheckScrollable();
 
     // let projectsSection = $(".content_item.projects");
     // if(!projectsSection.hasClass("hidden")){
@@ -30,7 +31,24 @@ $(window).on("resize", function(){
 });
 
 
-
+function checkScrollable(element){
+    return element[0].scrollHeight > element[0].clientHeight;
+}
+function projectsCheckScrollable(){
+    let cont = $(".content_item.projects .connected_container");
+    cont.each(function(index, element){
+        let connected = $(element);
+        let scrollable = checkScrollable(connected);
+        if(scrollable){
+            let conn_parent = connected.parent();
+            conn_parent.addClass("scrollable");
+        }
+        else{
+            let conn_parent = connected.parent();
+            conn_parent.removeClass("scrollable");
+        }
+    });
+}
 function updateContentContainerHeight(additional_element_height = 0){
     let additional_height = parseInt($(":root").css("--menu-top-margin"), 10) * 2 + 10;
     let maxHeight = additional_element_height; 
