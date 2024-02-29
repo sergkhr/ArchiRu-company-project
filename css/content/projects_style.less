@@ -133,6 +133,7 @@
                 }
                 .article{
                     @connected-inner-one-col-style();
+                    gap: 0;
                 }
                 
                 .participation{
@@ -212,6 +213,7 @@
                 .img_place{
                     img{
                         width: 100%;
+                        max-width: 160px;
                         height: auto;
                     }
                 }
@@ -255,6 +257,7 @@
                     align-items: center;
                     gap: var(--standart-gap);
                     margin-top: calc(var(--standart-gap) - 3px);
+                    margin-bottom: calc(var(--standart-gap) - 3px);
                     img{
                         width: 100%;
                         max-width: 100px;
@@ -286,6 +289,7 @@
                 top: 0;
                 left: 0;
                 height: var(--connected-type-height);
+                box-sizing: border-box;
                 min-width: 160px;
                 max-width: var(--col-width);
 
@@ -307,6 +311,7 @@
         }
         .article{
             @connected-inner-one-col-style();
+            gap: 0;
         }
         
         .participation{
@@ -367,5 +372,60 @@
     }
     @media (max-width: 449px){
         --col-width: 100%;
+
+        @block-to-one-col-style:{
+            display: flex;
+            flex-direction: column;
+            .scroll_icon{
+                display: none;
+            }
+            .connected_container{
+                position: relative;
+                .participation .images{
+                    flex-direction: row;
+                    margin-left: calc(var(--standart-gap) - 3px);
+                    overflow: auto;
+                }
+            }
+        }
+
+        .block{
+            &[data-size="4"]{
+                grid-column: span 1;
+                grid-template-columns: repeat(1, 1fr);
+                .object[data-size="2"]{
+                    grid-column: span 1;
+                }
+                .connected[data-size="2"]{
+                    @connected-turn-two-to-one();
+                }
+
+                @block-to-one-col-style();
+            }
+            &[data-size="3"]{
+                grid-column: span 1;
+                grid-template-columns: repeat(2, 1fr);
+                .object[data-size="2"]{
+                    grid-column: span 1;
+                }
+                .connected[data-size="2"]{
+                    @connected-turn-two-to-one();
+                }
+
+                @block-to-one-col-style();
+            }
+            &[data-size="2"]{
+                grid-column: span 1;
+                grid-template-columns: repeat(1, 1fr);
+                .object[data-size="2"]{
+                    grid-column: span 1;
+                }
+                .connected[data-size="2"]{
+                    @connected-turn-two-to-one();
+                }
+
+                @block-to-one-col-style();
+            }
+        }
     }
 }

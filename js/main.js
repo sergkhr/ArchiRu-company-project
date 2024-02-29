@@ -28,6 +28,7 @@ $(document).ready(function(){
 });
 $(window).on("resize", function(){
     load_resize();
+    projectsCheckScrollable();
 });
 
 
@@ -49,6 +50,7 @@ function projectsCheckScrollable(){
         }
     });
 }
+
 function updateContentContainerHeight(additional_element_height = 0){
     let additional_height = parseInt($(":root").css("--menu-top-margin"), 10) * 2 + 10;
     let maxHeight = additional_element_height; 
@@ -67,17 +69,17 @@ function updateContentContainerHeight(additional_element_height = 0){
     section_container.height(maxHeight + additional_height);
 }
 
-function updateProjectsBlocksHeight(){
-    let blocks = $(".content_item.projects .block");
+// function updateProjectsBlocksHeight(){
+//     let blocks = $(".content_item.projects .block");
 
-    blocks.each(function() {
-        let block = $(this);
-        let object = block.children(".object");
-        let object_height = object.outerHeight(true);
-        let connected = block.children(".connected");
-        connected.height(object_height);
-    });
-}
+//     blocks.each(function() {
+//         let block = $(this);
+//         let object = block.children(".object");
+//         let object_height = object.outerHeight(true);
+//         let connected = block.children(".connected");
+//         connected.height(object_height);
+//     });
+// }
 
 function eventsSetRandomizedTitlePositions(){
     let titles = $(".content_item.events .block .image_place");
@@ -111,6 +113,8 @@ function turnContainerBackgroundToDark(){
     cleanBackgroundStates(container);
     cleanMenuStates();
     setTimeout(function(){
+        if(container.attr("class").length > 0) return; // if background was changed in the meantime
+        
         container.addClass("dark_background");
     }, background_type_change_delay["dark"]);
 }
@@ -152,7 +156,15 @@ function openContentItem(item, background_type = null){
 
     content_items.addClass("hidden");
     setTimeout(function(){
+        if(background_type == "dark" && !container.hasClass("dark_background")){ //crunchy fix for dark background
+                return; // if content was changed in the meantime
+        }  
+        
         item.removeClass("hidden");
+
+        if(item.hasClass("projects")){
+            projectsCheckScrollable();
+        }
 
         updateContentContainerHeight(previous_height);
         item.on("animationend", function(event){

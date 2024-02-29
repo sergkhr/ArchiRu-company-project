@@ -110,6 +110,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 0;
 }
 #content .menu_item_content .content_item.projects .container .block .connected[data-size="1"] .participation {
   width: 100%;
@@ -197,6 +198,7 @@
 }
 #content .menu_item_content .content_item.projects .container .block .connected .article .img_place img {
   width: 100%;
+  max-width: 160px;
   height: auto;
 }
 #content .menu_item_content .content_item.projects .container .block .connected .article .text_place {
@@ -234,6 +236,7 @@
   align-items: center;
   gap: var(--standart-gap);
   margin-top: calc(var(--standart-gap) - 3px);
+  margin-bottom: calc(var(--standart-gap) - 3px);
 }
 #content .menu_item_content .content_item.projects .container .block .connected .participation .images img {
   width: 100%;
@@ -261,6 +264,7 @@
   top: 0;
   left: 0;
   height: var(--connected-type-height);
+  box-sizing: border-box;
   min-width: 160px;
   max-width: var(--col-width);
   font-family: Vida32_pro, Arial, Helvetica, sans-serif;
@@ -288,6 +292,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
   #content .menu_item_content .content_item.projects .container .block[data-size="4"] .connected[data-size="2"] .participation {
     width: 100%;
@@ -330,6 +335,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
   #content .menu_item_content .content_item.projects .container .block[data-size="4"] .connected[data-size="2"] .participation {
     width: 100%;
@@ -367,6 +373,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
   #content .menu_item_content .content_item.projects .container .block[data-size="3"] .connected[data-size="2"] .participation {
     width: 100%;
@@ -391,5 +398,158 @@
 @media (max-width: 449px) {
   #content .menu_item_content .content_item.projects .container {
     --col-width: 100%;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] {
+    grid-column: span 1;
+    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] .object[data-size="2"] {
+    grid-column: span 1;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] .connected[data-size="2"] {
+    grid-column: span 1;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] .connected[data-size="2"] .connected_container {
+    border-left: none;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] .connected[data-size="2"] .article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] .connected[data-size="2"] .participation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] .connected[data-size="2"] .article_block {
+    grid-column: span 1;
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] .connected[data-size="2"] .participation_block {
+    grid-column: span 1;
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] .connected[data-size="2"] .connected_object_block {
+    grid-column: span 1;
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] .scroll_icon {
+    display: none;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] .connected_container {
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="4"] .connected_container .participation .images {
+    flex-direction: row;
+    margin-left: calc(var(--standart-gap) - 3px);
+    overflow: auto;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] {
+    grid-column: span 1;
+    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] .object[data-size="2"] {
+    grid-column: span 1;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] .connected[data-size="2"] {
+    grid-column: span 1;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] .connected[data-size="2"] .connected_container {
+    border-left: none;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] .connected[data-size="2"] .article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] .connected[data-size="2"] .participation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] .connected[data-size="2"] .article_block {
+    grid-column: span 1;
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] .connected[data-size="2"] .participation_block {
+    grid-column: span 1;
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] .connected[data-size="2"] .connected_object_block {
+    grid-column: span 1;
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] .scroll_icon {
+    display: none;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] .connected_container {
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="3"] .connected_container .participation .images {
+    flex-direction: row;
+    margin-left: calc(var(--standart-gap) - 3px);
+    overflow: auto;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] {
+    grid-column: span 1;
+    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] .object[data-size="2"] {
+    grid-column: span 1;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] .connected[data-size="2"] {
+    grid-column: span 1;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] .connected[data-size="2"] .connected_container {
+    border-left: none;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] .connected[data-size="2"] .article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] .connected[data-size="2"] .participation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] .connected[data-size="2"] .article_block {
+    grid-column: span 1;
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] .connected[data-size="2"] .participation_block {
+    grid-column: span 1;
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] .connected[data-size="2"] .connected_object_block {
+    grid-column: span 1;
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] .scroll_icon {
+    display: none;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] .connected_container {
+    position: relative;
+  }
+  #content .menu_item_content .content_item.projects .container .block[data-size="2"] .connected_container .participation .images {
+    flex-direction: row;
+    margin-left: calc(var(--standart-gap) - 3px);
+    overflow: auto;
   }
 }
