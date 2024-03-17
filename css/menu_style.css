@@ -95,6 +95,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  user-select: none;
   min-width: calc(var(--item-size) - 1px);
   width: fit-content;
   height: 100%;

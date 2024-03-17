@@ -11,7 +11,7 @@ let normal_animation_time = parseFloat($(":root").css("--normal-animation-time")
 
 function load_resize(){ // same code on load and on resize
     updateContentContainerHeight();
-    projectsCheckScrollable();
+    // projectsCheckScrollable();
 
     // let projectsSection = $(".content_item.projects");
     // if(!projectsSection.hasClass("hidden")){
@@ -28,28 +28,28 @@ $(document).ready(function(){
 });
 $(window).on("resize", function(){
     load_resize();
-    projectsCheckScrollable();
+    // projectsCheckScrollable();
 });
 
 
 function checkScrollable(element){
     return element[0].scrollHeight > element[0].clientHeight;
 }
-function projectsCheckScrollable(){
-    let cont = $(".content_item.projects .connected_container");
-    cont.each(function(index, element){
-        let connected = $(element);
-        let scrollable = checkScrollable(connected);
-        if(scrollable){
-            let conn_parent = connected.parent();
-            conn_parent.addClass("scrollable");
-        }
-        else{
-            let conn_parent = connected.parent();
-            conn_parent.removeClass("scrollable");
-        }
-    });
-}
+// function projectsCheckScrollable(){
+//     let cont = $(".content_item.projects .connected_container");
+//     cont.each(function(index, element){
+//         let connected = $(element);
+//         let scrollable = checkScrollable(connected);
+//         if(scrollable){
+//             let conn_parent = connected.parent();
+//             conn_parent.addClass("scrollable");
+//         }
+//         else{
+//             let conn_parent = connected.parent();
+//             conn_parent.removeClass("scrollable");
+//         }
+//     });
+// }
 
 function updateContentContainerHeight(additional_element_height = 0){
     let additional_height = parseInt($(":root").css("--menu-top-margin"), 10) * 2 + 10;
@@ -162,9 +162,9 @@ function openContentItem(item, background_type = null){
         
         item.removeClass("hidden");
 
-        if(item.hasClass("projects")){
-            projectsCheckScrollable();
-        }
+        // if(item.hasClass("projects")){
+        //     projectsCheckScrollable();
+        // }
 
         updateContentContainerHeight(previous_height);
         item.on("animationend", function(event){
