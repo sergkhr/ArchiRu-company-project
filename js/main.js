@@ -200,3 +200,13 @@ all_menu_items.click(function(){
     openContentItem(section, background_type);
 });
 
+
+$("#menu__toggle").change(function(){
+    if(this.checked){
+        menu.addClass("opened");
+    }
+    else{
+        menu.removeClass("opened");
+    }
+});
+

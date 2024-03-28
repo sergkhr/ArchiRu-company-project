@@ -81,6 +81,33 @@
     left: 0;
     width: 100%;
     flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    pointer-events: none;
+    transition: all var(--fast-animation-time) ease;
+  }
+  #menu.opened {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--black-color), 60%);
+  }
+  #menu.opened.on_white_background {
+    background-color: rgba(var(--white-color), 80%);
+  }
+  #menu.opened .menu_item {
+    padding-right: 60px;
+  }
+}
+@media (max-width: 600px) {
+  #menu {
+    height: 133%;
+  }
+  #menu.opened .menu_item {
+    padding-right: 30px;
   }
 }
 #menu .menu_item {

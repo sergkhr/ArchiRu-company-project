@@ -61,6 +61,7 @@ body {
   letter-spacing: normal;
   position: relative;
   z-index: -100;
+  text-rendering: optimizeSpeed;
 }
 html h1,
 body h1,
@@ -98,9 +99,8 @@ body b {
 @media (max-width: 1239px) {
   #logo {
     width: 120px;
-    padding-left: 20px;
     height: 80px;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    right: 0;
   }
 }

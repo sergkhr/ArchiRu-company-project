@@ -66,6 +66,8 @@ html, body{
     position: relative;
     z-index: -100;
 
+    text-rendering: optimizeSpeed;
+
     h1, h2, h3, h4, h5, h6, p, b{
         margin: 0;
         padding: 0;
@@ -92,9 +94,8 @@ html, body{
     //mobile
     @media (max-width: 1239px){
         width: 120px;
-        padding-left: 20px;
         height: 80px;
-        top: 0;
-        left: 0;
+        bottom: 0;
+        right: 0;
     }
 }

@@ -64,8 +64,35 @@
         top: 0;
         left: 0;
         width: 100%;
-
         flex-direction: column;
+
+        justify-content: center;
+        opacity: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        pointer-events: none;
+        transition: all var(--fast-animation-time) ease;
+        &.opened{
+            opacity: 1;
+            pointer-events: all;
+            transform: translateX(0);
+            backdrop-filter: blur(10px);
+            background-color: rgba(var(--black-color), 60%);
+            &.on_white_background{
+                background-color: rgba(var(--white-color), 80%);
+            }
+            .menu_item{
+                padding-right: 60px;
+            }
+        }
+    }
+    @media (max-width: 600px){
+        height: 133%;
+        &.opened{
+            .menu_item{
+                padding-right: 30px;
+            }
+        }
     }
 
 
