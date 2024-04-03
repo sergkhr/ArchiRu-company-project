@@ -11,6 +11,7 @@ let normal_animation_time = parseFloat($(":root").css("--normal-animation-time")
 
 function load_resize(){ // same code on load and on resize
     updateContentContainerHeight();
+    initiateSimpleBar();
     // projectsCheckScrollable();
 
     // let projectsSection = $(".content_item.projects");
@@ -31,6 +32,21 @@ $(window).on("resize", function(){
     // projectsCheckScrollable();
 });
 
+function initiateSimpleBar(){
+    let scrollable_elements = $(".connected_container");
+    scrollable_elements.each(function(){
+        let element = $(this);
+        let simpleBar = new SimpleBar(element[0], {
+            autoHide: false,
+            // classNames: {
+            //     content: 'projects-simplebar-content',
+            //     scrollContent: 'projects-simplebar-scroll-content',
+            //     scrollbar: 'projects-simplebar-scrollbar',
+            //     track: 'projects-simplebar-track'
+            // }
+        });
+    });
+}
 
 function checkScrollable(element){
     return element[0].scrollHeight > element[0].clientHeight;
