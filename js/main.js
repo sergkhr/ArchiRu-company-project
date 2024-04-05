@@ -11,7 +11,6 @@ let normal_animation_time = parseFloat($(":root").css("--normal-animation-time")
 
 function load_resize(){ // same code on load and on resize
     updateContentContainerHeight();
-    initiateSimpleBar();
     // projectsCheckScrollable();
 
     // let projectsSection = $(".content_item.projects");
@@ -22,6 +21,7 @@ function load_resize(){ // same code on load and on resize
 $(document).ready(function(){
     load_resize();
     eventsSetRandomizedTitlePositions();
+    initiateSimpleBar();
 
     all_menu_items.filter(function() { // first seen page is texts
         return $(this).data("index") == 3;
